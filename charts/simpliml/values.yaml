@@ -33,13 +33,13 @@ backend:
   podSecurityContext: {}
     # fsGroup: 2000
 
-  securityContext: {}
-    # capabilities:
-    #   drop:
-    #   - ALL
-    # readOnlyRootFilesystem: true
-    # runAsNonRoot: true
-    # runAsUser: 1000
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    runAsGroup: 1000
+    allowPrivilegeEscalation: false
+    privileged: false
+    readOnlyRootFilesystem: true
 
   service:
     type: ClusterIP
@@ -71,17 +71,16 @@ backend:
     targetMemoryUtilizationPercentage: 75
 
   # Additional volumes on the output Deployment definition.
-  volumes: []
-  # - name: foo
-  #   secret:
-  #     secretName: mysecret
-  #     optional: false
+  volumes:
+    - name: env
+      secret:
+        secretName: simpliml-backend-secret
 
   # Additional volumeMounts on the output Deployment definition.
-  volumeMounts: []
-  # - name: foo
-  #   mountPath: "/etc/foo"
-  #   readOnly: true
+  volumeMounts:
+    - mountPath: "/home/node/app/.env"
+      name: env
+      subPath: .env
 
   nodeSelector: {}
 
@@ -108,13 +107,13 @@ inference:
   podSecurityContext: {}
     # fsGroup: 2000
 
-  securityContext: {}
-    # capabilities:
-    #   drop:
-    #   - ALL
-    # readOnlyRootFilesystem: true
-    # runAsNonRoot: true
-    # runAsUser: 1000
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    runAsGroup: 1000
+    allowPrivilegeEscalation: false
+    privileged: false
+    readOnlyRootFilesystem: true
 
   service:
     type: ClusterIP
@@ -146,17 +145,16 @@ inference:
     targetMemoryUtilizationPercentage: 75
 
   # Additional volumes on the output Deployment definition.
-  volumes: []
-  # - name: foo
-  #   secret:
-  #     secretName: mysecret
-  #     optional: false
+  volumes:
+    - name: env
+      secret:
+        secretName: simpliml-inference-secret
 
   # Additional volumeMounts on the output Deployment definition.
-  volumeMounts: []
-  # - name: foo
-  #   mountPath: "/etc/foo"
-  #   readOnly: true
+  volumeMounts:
+    - mountPath: "/home/node/app/.env"
+      name: env
+      subPath: .env
 
   nodeSelector: {}
 
@@ -183,13 +181,13 @@ frontend:
   podSecurityContext: {}
     # fsGroup: 2000
 
-  securityContext: {}
-    # capabilities:
-    #   drop:
-    #   - ALL
-    # readOnlyRootFilesystem: true
-    # runAsNonRoot: true
-    # runAsUser: 1000
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+    runAsGroup: 1000
+    allowPrivilegeEscalation: false
+    privileged: false
+    readOnlyRootFilesystem: true
 
   service:
     type: ClusterIP
