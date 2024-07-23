@@ -1,0 +1,19 @@
+{{- if .Values.deployment.createNamespace }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    {{- include "..labels" . | nindent 4 }}
+    {{- include "..selectorLabels" . | nindent 4 }}
+  name: {{ .Values.deployment.namespace }}
+{{- end }}
+{{- if .Values.finetune.createNamespace }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    {{- include "..labels" . | nindent 4 }}
+    {{- include "..selectorLabels" . | nindent 4 }}
+  name: {{ .Values.finetune.namespace }}
+{{- end }}

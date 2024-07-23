@@ -1,0 +1,12 @@
+SimpliML {{ .Chart.AppVersion }} has been deployed successfully.
+
+The full SimpliML documentation is available at https://docs.simpliml.com.
+
+{{- if .Values.ingress.enabled }}
+If you want to access SimpliML through the ingress controller
+{{- range $host := .Values.ingress.hosts }}
+  {{- range .paths }}
+  http{{ if $.Values.ingress.tls }}s{{ end }}://{{ $host.host }}{{ .path }}
+  {{- end }}
+{{- end }}
+{{- end }}
