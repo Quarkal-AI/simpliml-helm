@@ -1,0 +1,35 @@
+apiVersion: v1
+entries:
+  simpliml:
+  - annotations:
+      artifacthub.io/category: infrastructure
+      artifacthub.io/changes: |
+        - kind: added
+          description: Update SimpliML to v1.0.1
+    apiVersion: v2
+    appVersion: v1.0.1
+    created: "2024-07-23T09:12:06.087812173Z"
+    description: SimpliML - Your Full Stack GenAI Infrastructure. Deploy, Finetune, Manage Prompts and Generate Data—all in one place.
+    home: https://simpliml.com
+    icon: https://quarkal-ai.github.io/simpliml-helm/image.png
+    keywords:
+    - LLM
+    - LLMOps
+    - llmops
+    - genai
+    - Gen AI
+    - infrastructure
+    maintainers:
+    - email: support@quarkal.com
+      name: Quarkal
+      url: https://github.com/quarkal-ai
+    name: quarkal
+    sources:
+    - https://github.com/quarkal-ai/simpliml
+    - https://github.com/quarkal-ai/simpliml-helm
+    type: application
+    urls:
+    - https://github.com/quarkal-ai/simpliml-helm/releases/download/simpliml-1.0.1/simpliml-1.0.1.tgz
+    version: 1.0.1
+
+generated: "2024-07-23T09:12:06.088163032Z"
