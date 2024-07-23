@@ -1,4 +1,6 @@
 # SimpliML helm repository
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 [SimpliML documentation](https://docs.simpliml.com)
 
 This repository hosts the following helm charts:
@@ -6,6 +8,11 @@ This repository hosts the following helm charts:
 * [SimpliML](charts/simpliml/README.md)
 
 ## Usage
+
+[Helm](https://helm.sh) must be installed to use the charts.
+Please refer to Helm's [documentation](https://helm.sh/docs/) to get started.
+
+Once Helm is set up properly, add the repo as follows:
 
 ```bash
 helm repo add simpliml https://quarkal-ai.github.io/simpliml-helm

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: simpliml
-description: SipliML - Your Full Stack GenAI Infrastructure. Deploy, Finetune, Manage Prompts and Generate Data—all in one place.
+description: SimpliML - Your Full Stack GenAI Infrastructure. Deploy, Finetune, Manage Prompts and Generate Data—all in one place.
 
 # A chart can be either an 'application' or a 'library' chart.
 #
